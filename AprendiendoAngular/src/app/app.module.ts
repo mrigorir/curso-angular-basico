@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+//Components
 import { AppComponent } from './app.component';
-import  { MiComponente } from './components/mi-componente/mi-componente.component';
 import { PeliculasComponent } from './components/peliculas/peliculas.component';
+import { HolaMundoComponent } from './components/hola-mundo/hola-mundo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MiComponente,
-    PeliculasComponent
+    PeliculasComponent,
+    HolaMundoComponent
   ],
   imports: [
     BrowserModule
