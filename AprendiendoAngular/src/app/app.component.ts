@@ -6,19 +6,26 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  name: string = 'Marco';
-  age: number;
-  address: {
-    street: string,
-    city: string
+  users: string[] = ['Marco', 'Alan', 'Ryan'];
+  sayHello(user: string) {
+    alert('Hello! '+ user);
   }
-  hobbies: string[];
-  constructor () {
-    this.age = 28;
-    this.address = {
-      street: 'AV 2-C',
-      city: 'Maracaibo'
+
+  addUser(newUser: any) {
+    this.users.push(newUser.value);
+    newUser.value = '';
+    return false;
+  }
+
+  deleteUser (user: string) {
+    for (let i = 0; i < this.users.length; i++) {
+      if (user === this.users[i]) {
+        this.users.splice(i, 1);
+      }
     }
-    this.hobbies = ['pareja', 'estudiar', 'jugar'];  
-  }  
+  }
+
+  constructor () {
+  
+  }
 }

@@ -1,8 +1,17 @@
-<p>name: {{name}}</p>
-<p>Street: {{address.street}}</p>
-<p>City:{{address.city}}</p>
-<ul>
-  <li *ngFor="let hobbie of hobbies">  
-    {{hobbie}}
+<form (submit)="addUser(newUser)">
+  <input type="text" #newUser>
+  <button>
+    Send user
+  </button>
+</form>
+
+<ul style="list-style: none;">
+  <li *ngFor="let user of users"> 
+    {{user}} 
+    <button (click)="deleteUser(user)">
+      X
+    </button>
   </li>
 </ul>
+
+
