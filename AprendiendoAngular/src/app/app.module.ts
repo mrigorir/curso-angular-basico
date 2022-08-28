@@ -1,11 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 //Components
 import { AppComponent } from './app.component';
 import { PeliculasComponent } from './components/peliculas/peliculas.component';
 import { HolaMundoComponent } from './components/hola-mundo/hola-mundo.component';
 import { UserComponent } from './user/user.component';
+//Forms
+import { FormsModule } from '@angular/forms';
+//Services
+import { DataService } from './data.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -15,9 +19,13 @@ import { UserComponent } from './user/user.component';
     UserComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    HttpClientModule
+
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [DataService],
+  bootstrap: [AppComponent],
+
 })
 export class AppModule { }

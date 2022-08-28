@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataService } from './data.service';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   users: string[] = ['Marco', 'Alan', 'Ryan'];
+  name: string;
+  age: any;
+  posts: any = [];
+
+  constructor (private dataService: DataService) {
+    this.name = 'Marco';
+    this.age = 33;
+    this.dataService.getData().subscribe(data => {
+      this.posts = data;
+    });
+  }
+
   sayHello(user: string) {
     alert('Hello! '+ user);
   }
@@ -23,9 +36,5 @@ export class AppComponent {
         this.users.splice(i, 1);
       }
     }
-  }
-
-  constructor () {
-  
   }
 }
