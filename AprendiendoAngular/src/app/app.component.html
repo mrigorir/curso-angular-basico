@@ -1,3 +1,15 @@
+
+<ul>
+  <li>
+    <a routerLink="/">Home</a>
+  </li>
+  <li>
+    <a routerLink="/about">About</a>
+  </li>
+</ul>
+
+<router-outlet></router-outlet>
+
 <form (submit)="addUser(newUser)">
   <input type="text" #newUser>
   <button>
@@ -21,12 +33,5 @@
 name: {{name}}
 <br>
 age: {{age}}
-<br>
-<br>
-<br>
 
-<div *ngFor="let post of posts">
-   <h3>{{post.title}}</h3>
-   <p>{{post.body}}</p>
-</div>
 
